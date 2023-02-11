@@ -1,0 +1,82 @@
+[
+    {
+        "city": "New York",
+        "temperature": "72°F",
+        "wind_speed": "10mph",
+        "humidity": "65%",
+        "visibility": "10 miles",
+        "pressure": "1013 hPa"
+    },
+    {
+        "city": "Los Angeles",
+        "temperature": "75°F",
+        "wind_speed": "12mph",
+        "humidity": "70%",
+        "visibility": "15 miles",
+        "pressure": "1012 hPa"
+    },
+    {
+        "city": "Chicago",
+        "temperature": "68°F",
+        "wind_speed": "15mph",
+        "humidity": "60%",
+        "visibility": "5 miles",
+        "pressure": "1011 hPa"
+    },
+    {
+        "city": "Houston",
+        "temperature": "80°F",
+        "wind_speed": "8mph",
+        "humidity": "75%",
+        "visibility": "10 miles",
+        "pressure": "1010 hPa"
+    },
+    {
+        "city": "Phoenix",
+        "temperature": "85°F",
+        "wind_speed": "5mph",
+        "humidity": "50%",
+        "visibility": "20 miles",
+        "pressure": "1012 hPa"
+    },
+    {
+        "city": "Philadelphia",
+        "temperature": "70°F",
+        "wind_speed": "12mph",
+        "humidity": "65%",
+        "visibility": "10 miles",
+        "pressure": "1013 hPa"
+    },
+    {
+        "city": "San Antonio",
+        "temperature": "78°F",
+        "wind_speed": "10mph",
+        "humidity": "70%",
+        "visibility": "15 miles",
+        "pressure": "1011 hPa"
+    },
+    {
+        "city": "San Diego",
+        "temperature": "72°F",
+        "wind_speed": "8mph",
+        "humidity": "60%",
+        "visibility": "20 miles",
+        "pressure": "1012 hPa"
+    },
+    {
+        "city": "Dallas",
+        "temperature": "75°F",
+        "wind_speed": "12mph",
+        "humidity": "65%",
+        "visibility": "10 miles",
+        "pressure": "1013 hPa"
+    },
+    {
+        "city": "San Jose",
+        "temperature": "68°F",
+        "wind_speed": "15mph",
+        "humidity": "70%",
+        "visibility": "5 miles",
+        "pressure": "1012 hPa"
+    }
+]

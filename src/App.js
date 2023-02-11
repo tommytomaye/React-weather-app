@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React, { useState, useMemo, useEffect } from 'react';
+import WeatherDataComponent from './weatherData';
+import weatherInfoData from './weatherInfo.json';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [weatherData, setWeatherData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    setWeatherData(weatherInfoData);
+  }, []);
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredData = useMemo(() => {
+    return weatherData.filter(
+      (weather) =>
+        weather.city.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+    );
+  }, [searchTerm, weatherData]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container"> 
+      <input
+        type="text"
+        className="search-input"
+        placeholder="Search city..."
+        value={searchTerm}
+        onChange={handleChange}
+      />
+      
+      {filteredData.length ? (
+        <WeatherDataComponent data={filteredData} />
+      ) : (
+        <div className="no-data-found">No data found</div>
+      )}
     </div>
   );
-}
+};
 
 export default App;

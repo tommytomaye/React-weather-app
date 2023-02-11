@@ -1,0 +1,63 @@
+:root {
+    --margin: 10px;
+    --padding: 25px;
+    --background-color: #f2f2f2;
+    --border-width: 1px;
+    --border-color: black;
+    --box-shadow: 0px 0px 10px #ccc;
+    --border-radius: 10px;
+    --font-size: 1.2rem;
+    --transition-duration: 0.2s;
+    --transform: translateY(-5px);
+    --hover-box-shadow: 0px 0px 15px #ccc;
+  }
+  
+  .weather-data {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  
+  .weather-data li {
+    margin: var(--margin) var(--margin);
+    padding: var(--padding);
+    background-color: var(--background-color);
+    flex-basis: 28%;
+    border: var(--border-width) solid var(--border-color);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size);
+    transition: all var(--transition-duration) ease-in-out;
+  }
+  
+  .weather-data li:hover {
+    transform: var(--transform);
+    box-shadow: var(--hover-box-shadow);
+  }
+  
+  .temperature {
+    color: green;
+  }
+  
+  .wind-speed {
+    color: red;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1390px) {
+    .weather-data li {
+      flex-basis: 40%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .weather-data {
+      flex-direction: row;
+    }
+  
+    .weather-data li {
+      flex-basis: 100%;
+    }
+  }
+  
