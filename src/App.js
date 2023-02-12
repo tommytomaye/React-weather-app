@@ -1,26 +1,38 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import WeatherDataComponent from './weatherData';
-import weatherInfoData from './weatherInfo.json';
 import './App.css';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    setWeatherData(weatherInfoData);
+    const fetchData = async () => {
+      try {
+        const res = await fetch('http://localhost:3000/weather');
+        const data = await res.json();
+        setWeatherData(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
   }, []);
+
+  useEffect(() => {
+    setFilteredData(
+      weatherData.filter(
+        (weather) =>
+          weather.city.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+      )
+    );
+  }, [searchTerm, weatherData]);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
-
-  const filteredData = useMemo(() => {
-    return weatherData.filter(
-      (weather) =>
-        weather.city.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
-    );
-  }, [searchTerm, weatherData]);
 
   return (
     <div className="container"> 
